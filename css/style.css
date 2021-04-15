@@ -1,0 +1,30 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: spotify-circular, spotify-circular-cyrillic,
+        spotify-circular-arabic, spotify-circular-hebrew, Helvetica Neue,
+        helvetica, arial, Hiragino Kaku Gothic Pro, Meiryo, MS Gothic,
+        sans-serif;
+
+    color: var(--text-grey);
+    text-decoration: none;
+}
+:root {
+    --text-grey: #5c5c60;
+}
+
+/* LEFT MENU */
+.left-menu {
+    background-color: #000000;
+    position: absolute;
+    left: 0;
+    height: 100vh;
+}
+.spotify.logo {
+    width: 100px;
+}
+
+.nav.logo {
+    width: 40px;
+}
