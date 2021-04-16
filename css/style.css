@@ -15,7 +15,7 @@
     list-style-type: none;
 }
 :root {
-    --text-grey: #b3b3b3;
+    --text-grey: #b3b3b2;
 }
 svg {
     width: 24px;
@@ -325,3 +325,5 @@ footer h4 {
     height: 4px;
     background-color: #b3b3b3;
 }
+
+/* ANIMATION */
