@@ -25,7 +25,7 @@ svg {
 h2 {
     color: white;
     font-size: 24px;
-    text-align: center;
+    text-align: left;
     margin-bottom: 0.5rem;
 }
 
@@ -40,8 +40,18 @@ h4 {
     font-weight: lighter;
     text-align: center;
 }
+button {
+    background: none;
+    border: none;
+    margin: auto;
+    padding: 4px;
+}
 .bold-heading {
     font-weight: bolder;
+}
+.circular {
+    border-radius: 50%;
+    object-fit: contain;
 }
 img {
     width: 26px;
@@ -80,16 +90,28 @@ ul li a {
     padding: 5px 0;
 }
 
-/* PAGE LAYOUT */
+body {
+    display: grid;
+    grid-template:
+        "left-menu main" 1fr
+        "footer footer" auto /
+        auto 1fr;
+    height: 100vh;
+}
+
+main {
+    grid-area: main;
+    overflow-y: scroll;
+}
+
 footer {
-    height: 90px;
+    grid-area: footer;
 }
 
 /* LEFT MENU */
 .left-menu {
+    grid-area: left-menu;
     background-color: #000000;
-
-    height: calc(100vh - 90px - 10px);
 
     display: grid;
     grid-template-rows: auto auto auto;
@@ -150,16 +172,26 @@ footer {
 main {
     /* background: -webkit-linear-gradient(#5c5c5f, #121212); */
     background-color: #151921;
-    display: grid;
     grid-template-columns: auto 1fr;
-    width: 100vw;
+}
+main::-webkit-scrollbar {
+    width: 10px;
+}
+
+main::-webkit-scrollbar-thumb {
+    background: #979797b4;
+    height: 7px;
+    border-radius: 20px;
 }
 
 .topbar {
     height: 90px;
-    background-color: #0d0f14;
+    background-color: #0d0f1470;
     display: grid;
     place-content: center end;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
 }
 .main-content nav ul {
     display: grid;
@@ -180,26 +212,116 @@ main {
 }
 section.topbar .button a {
     width: 100%;
-
+    margin-right: 30px;
     padding: 10px;
     border: 2px solid white;
     border-radius: 20px;
 }
-.recently-played .row {
+main section {
+    padding: 2em;
+}
+
+.horizontal-scroll-list {
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: minmax(200px, 1fr);
-    justify-items: center;
+    grid-auto-columns: minmax(200px);
+    justify-items: start;
+    justify-content: left;
+
     gap: 20px;
 }
 
 .image-container img {
     width: 100%;
 }
+.item img {
+    max-width: 250px;
+    min-width: 200px;
+}
+
+.created-for h4,
+.popular-artists h4 {
+    text-align: left;
+    margin-bottom: 1em;
+}
 
 /* MUSIC PLAYER */
-.music-player {
+footer {
     height: 100px;
     background-color: #181818;
     border-top: 1px solid #282828;
+
+    display: grid;
+    grid-template-columns: 232px 1fr 232px;
+    place-items: center;
+}
+footer h3 {
+    text-align: left;
+    font-size: 12px;
+    margin-bottom: 2px;
+}
+footer h4 {
+    text-align: left;
+    font-size: 11px;
+    margin: 0;
+}
+
+.now-playing {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 24px;
+    gap: 10px;
+    place-items: center space-between;
+    place-content: center;
+}
+.now-playing img {
+    width: 20px;
+    color: #b3b3b3;
+}
+.now-playing .thumbnail img {
+    width: 100%;
+    object-fit: contain;
+}
+.now-playing .thumbnail {
+    height: 40px;
+    width: 40px;
+}
+.heart {
+    display: grid;
+    place-content: center right;
+}
+
+.progress-bar {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    place-content: center;
+    place-items: center;
+    place-content: center;
+}
+
+.progress-bar div {
+    height: 3px;
+    width: 500px;
+    border-radius: 2px;
+    background-color: var(--text-grey);
+    margin: 0 12px;
+}
+.music-player-buttons {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    place-items: center;
+    place-content: center;
+}
+
+.settings {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+}
+.settings img {
+    width: 16px;
+}
+.settings .volume-level {
+    width: 40px;
+    height: 4px;
+    background-color: #b3b3b3;
 }
