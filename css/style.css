@@ -238,6 +238,10 @@ main section {
     max-width: 250px;
     min-width: 200px;
 }
+.item {
+    padding: 1rem;
+    border-radius: 5px;
+}
 
 .created-for h4,
 .popular-artists h4 {
@@ -327,3 +331,44 @@ footer h4 {
 }
 
 /* ANIMATION */
+a:hover,
+span:hover {
+    color: white;
+    transition: 0.2s;
+}
+
+.now-playing h3:hover,
+.now-playing h4:hover {
+    text-decoration: underline;
+}
+
+.item:hover {
+    background-color: #acacac3a;
+    transition: 0.2s;
+}
+
+.green-block {
+    visibility: hidden;
+}
+.play:hover {
+    transform: scale(1.2);
+    fill: white;
+}
+.music-player-buttons button:hover {
+    fill: white;
+    transform: scale(1.1);
+}
+@keyframes greenblock {
+    100% {
+        border-bottom: #1db954 solid 2px;
+    }
+}
+
+.green-block-button:hover {
+    animation: greenblock infinte 0.2s;
+}
+
+.right {
+    position: relative;
+    left: 29%;
+}
