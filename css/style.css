@@ -358,14 +358,17 @@ span:hover {
     fill: white;
     transform: scale(1.1);
 }
-@keyframes greenblock {
-    100% {
-        border-bottom: #1db954 solid 2px;
-    }
+.green-block-container {
+    margin: 10px;
+}
+
+.green-block-button {
+    padding: 10px 0;
 }
 
 .green-block-button:hover {
-    animation: greenblock infinte 0.2s;
+    border-bottom: #1db954 solid 2px;
+    padding-bottom: 8px;
 }
 
 .right {
